@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'sendmailer');
+$autoload['libraries'] = array('session', 'sendmailer', 'smartytemplater');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url');
 |
 */
 
-$autoload['config'] = array('mail_config');
+$autoload['config'] = array('mail_config', 'smarty_config');
 
 
 /*
