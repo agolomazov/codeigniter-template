@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'sendmailer', 'smartytemplater');
+$autoload['libraries'] = array('session', 'sendmailer', 'twigtemplater');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url');
 |
 */
 
-$autoload['config'] = array('mail_config', 'smarty_config');
+$autoload['config'] = array('mail', 'twig');
 
 
 /*

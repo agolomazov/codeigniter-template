@@ -4,7 +4,9 @@ class Main extends CI_Controller {
 
     public function index(){
 
-        $this->smartytemplater->display('index.tpl');
+        $this->twigtemplater->render('index', array(
+            'name' => 'Антон Голомазов'
+        ));
 
     }
 
