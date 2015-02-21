@@ -1,0 +1,9 @@
+{
+  "require": {
+    "phpmailer/phpmailer": "dev-master",
+    "smarty/smarty": "3.1.*@dev"
+  },
+  "config": {
+    "vendor-dir": "application/libraries/out"
+  }
+}
