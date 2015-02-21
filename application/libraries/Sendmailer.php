@@ -66,6 +66,8 @@ class Sendmailer extends PHPMailer{
         $this->Subject = $subject;
         $this->Body    = $text;
         parent::send();
+        $this->ClearAddresses();
+        $this->ClearAttachments();
     }
 
 }
