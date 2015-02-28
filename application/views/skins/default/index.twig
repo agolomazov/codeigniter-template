@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Тестовый шаблон</title>
+    <script src="/libs/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 
     <h1>Тестовый шаблон</h1>
 
     {{ name }}
+
+    <form action="">
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <script>
+            var ckeditor = CKEDITOR.replace( 'text' );
+        </script>
+    </form>
 
 </body>
 </html>

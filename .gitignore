@@ -77,7 +77,7 @@ application/views/compile
 
 # IntelliJ
 out/
-
+libs/kcfinder/upload/
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
