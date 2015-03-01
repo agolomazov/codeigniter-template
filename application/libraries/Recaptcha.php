@@ -80,7 +80,7 @@ class Recaptcha {
     /**
      * @return string - метод возвращает html код капчи
      */
-    public function captcha_html(){
+    public function captchaHtml(){
         return "<div data-type='{$this->type}' data-theme='{$this->skin}' class='g-recaptcha' data-sitekey='{$this->public_key}'></div>";
     }
 
