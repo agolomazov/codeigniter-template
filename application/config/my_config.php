@@ -21,5 +21,5 @@ $config['twig_template_dir'] = APPPATH.'/views/twig/skins';
 $config['twig_skin_dir'] = $config['twig_template_dir'].'/default';
 
 ## Настройки для google recaptcha
-$config['google_recaptcha_private'] = "6LdYzgITAAAAAPOzfwAXNr3oQHu7nPhXM5gRDBhc";
-$config['google_recaptcha_public']  = "6LdYzgITAAAAAE4CHE4Ps0diT-AH3z4mTiYAjNPA";
+$config['google_recaptcha_private'] = "";
+$config['google_recaptcha_public']  = "";
