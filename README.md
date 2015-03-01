@@ -2,28 +2,29 @@
 
 Данная сборка включает в себя следующие компоненты:
 
-* [CodeIgniter 2.2.1](href=http://codeigniter.com)
-* [PHPMailer 5.2.9](href=https://github.com/PHPMailer/PHPMailer)
-* [Шаблонизатор Smarty](href=http://www.smarty.net/)
-* [Шаблонизатор Twig](href=http://twig.sensiolabs.org/)
-* [Визуальный редактор CKEditor](href=http://ckeditor.com/)
-* [Файловый менеджер KCFinder](href=http://kcfinder.sunhater.com/)
+* [CodeIgniter 2.2.1](http://codeigniter.com)
+* [PHPMailer 5.2.9](https://github.com/PHPMailer/PHPMailer)
+* [Шаблонизатор Smarty](http://www.smarty.net/)
+* [Шаблонизатор Twig](http://twig.sensiolabs.org/)
+* [Визуальный редактор CKEditor](http://ckeditor.com/)
+* [Файловый менеджер KCFinder](http://kcfinder.sunhater.com/)
+* [Google Recaptcta](https://developers.google.com/recaptcha/)
 
 ## 1. Интеграция тестового редактора
 
 Для интеграции ***визуального редактора*** на странице необходимо выполнить следующие действия:
 
-1. Скачиваем [CKEditor](href=http://ckeditor.com/) с официального сайта и разархивируем в папку
-`path_to_site/libs/`
-2. Аналогично, скачиваем [KCFinder](href=http://kcfinder.sunhater.com/) и кладем его в ту же папку
+1. Скачиваем [CKEditor](http://ckeditor.com/) с официального сайта и разархивируем в папку
+`path/to/libs/`
+2. Аналогично, скачиваем [KCFinder](http://kcfinder.sunhater.com/) и кладем его в ту же папку
 3. В итоге у нас должна получится вот такая структура
 <br /><br />
-    ***path_to_site*** - папка с фреймворком<br />
+    ***path/to*** - папка с фреймворком<br />
     &nbsp;|<br />
     &nbsp;...  остальные файлы<br />
-    &nbsp;|--> ***path_to_site/libs/***<br />
-    &nbsp;|--> ***path_to_site/libs/ckeditor/файлы визуального редактора***<br />
-    &nbsp;|--> ***path_to_site/libs/kcfinder/файлы файлового менеджера***<br />
+    &nbsp;|--> ***path/to/libs/***<br />
+    &nbsp;|--> ***path/to/libs/ckeditor/файлы визуального редактора***<br />
+    &nbsp;|--> ***path/to/libs/kcfinder/файлы файлового менеджера***<br />
     &nbsp;...  остальные файлы<br />
     <br /><br />
 2. Вставить в конце тега `head` скрипт `<script src="/libs/ckeditor/ckeditor.js"></script>`
@@ -98,7 +99,7 @@
      
          //config.useComputedState = false;
  
- 6. Далее переходим в папку с файловым менеджером `path_to_site/libs/kcfinder/conf/config.php`
+ 6. Далее переходим в папку с файловым менеджером `path/to/libs/kcfinder/conf/config.php`
  и внесем изменения в настройки менеджера (строки 24-25)
  
         'disabled' => false,
@@ -107,14 +108,27 @@
         
 ## 2. Настройка отправки почты помощью PHPMailer
 
-Для использования в проекте библиотеки [PHPMailer](href=http://kcfinder.sunhater.com/) достаточно выполнить следующие действия:
+Для использования в проекте библиотеки [PHPMailer](http://kcfinder.sunhater.com/) достаточно выполнить следующие действия:
 
-* Перейти в папку `path_to_site/application/config/` и открыть файл my_config.php
-* Отредактируйте данные, отмеченные в комментариях как ***Настройки для почты***
-* Откройте в той же папке файл autoload.php и в настройке `$autoload['libraries']` добавьте имя библиотеки `sendmailer`
-* Дополнительно библиотеку натривать не надо, настройки она возьмет из файла my_config.php
-* Библиотека содержит следующие методы:
-    * setSenderLabel($name) - устанавливает подпись отправителя письма
-    * setRecipient($email, $name) - устанавливает email и подпись того, кому отправляется письмо (для того, чтобы добавить больше
+1. Перейти в папку `path/to/application/config/` и открыть файл my_config.php
+2. Отредактируйте данные, отмеченные в комментариях как ***Настройки для почты***
+3. Откройте в той же папке файл autoload.php и в настройке `$autoload['libraries']` добавьте имя библиотеки `sendmailer`
+4. Дополнительно библиотеку натривать не надо, настройки она возьмет из файла my_config.php
+5. Библиотека содержит следующие методы:
+    * ***setSenderLabel($name)*** - устанавливает подпись отправителя письма
+    * ***setRecipient($email, $name)*** - устанавливает email и подпись того, кому отправляется письмо (для того, чтобы добавить больше
     одного получателя, можно вызывать этот метод в цикле)
-    * send() - отправляет письмо адресату(-там) и возвращает TRUE если письмо отправлено, или FALSE - в противном случае
+    * ***send()*** - отправляет письмо адресату(-там) и возвращает TRUE если письмо отправлено, или FALSE - в противном случае
+    
+## 3. Использование [Google Recaptcha](https://developers.google.com/recaptcha/)
+
+Для добавления на форму капчи от Google необходимо выполнить следующие действия:
+
+1. Переходим на сайт [Google Captcha](https://www.google.com/recaptcha/intro/index.html) и нажимаем на кнопку getRECAPTCHA
+2. Заполняем форму регистрации сайта и получаем открытый и закрытый ключ
+3. Переходим на наш сайт в папку `path/to/application/config` и открываем файл ***my_config.php*** и редактируем:
+      ```
+      <?php
+        $config['google_recaptcha_private']
+        $config['google_recaptcha_public'] 
+     ```

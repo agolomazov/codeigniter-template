@@ -31,4 +31,12 @@ class MY_Controller extends CI_Controller
         $this->data[$key] = $value;
     }
 
+    /**
+     *  Метод проверяет, был ли пост запрос
+     * @return bool - TRUE если был post запрос, в противном случае - FALSE
+     */
+    protected function is_post(){
+        return ($_SERVER['REQUEST_METHOD'] == "POST") ? true : false;
+    }
+
 } 
