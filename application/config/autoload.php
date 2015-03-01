@@ -80,7 +80,7 @@ $autoload['helper'] = array('url');
 |
 */
 
-$autoload['config'] = array('mail', 'twig');
+$autoload['config'] = array('my_config');
 
 
 /*
