@@ -46,7 +46,6 @@ class Sendmailer extends PHPMailer{
 
     /**
      *  Метод устанавливает получателей письма
-     *  формат - array('email', 'name')
      *
      * @param $recipients
      */
@@ -65,9 +64,16 @@ class Sendmailer extends PHPMailer{
     public function send($subject, $text){
         $this->Subject = $subject;
         $this->Body    = $text;
-        parent::send();
-        $this->ClearAddresses();
-        $this->ClearAttachments();
+        if(parent::send()){
+            $this->ClearAddresses();
+            $this->ClearAttachments();
+            return true;
+        } else {
+            $this->ClearAddresses();
+            $this->ClearAttachments();
+            return false;
+        }
+
     }
 
 }

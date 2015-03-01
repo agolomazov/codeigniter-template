@@ -65,7 +65,7 @@ CKEDITOR.editorConfig = function( config ) {
         showWordCount: true,
 
         // Whether or not you want to show the Char Count
-        showCharCount: false,
+        showCharCount: true,
 
         // Whether or not to include Html chars in the Char Count
         countHTML: false
