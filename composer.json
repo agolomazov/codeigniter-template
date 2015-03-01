@@ -2,7 +2,8 @@
   "require": {
     "phpmailer/phpmailer": "dev-master",
     "smarty/smarty": "3.1.*@dev",
-    "twig/twig": "1.18.*@dev"
+    "twig/twig": "1.18.*@dev",
+    "dropbox/dropbox-sdk": "v1.1.5"
   },
   "config": {
     "vendor-dir": "application/libraries/out"

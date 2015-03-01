@@ -23,3 +23,6 @@ $config['twig_skin_dir'] = $config['twig_template_dir'].'/default';
 ## Настройки для google recaptcha
 $config['google_recaptcha_private'] = "";
 $config['google_recaptcha_public']  = "";
+
+## Настройка для установки шаблонизатора по умолчанию
+$config['default_template'] = "smarty";
